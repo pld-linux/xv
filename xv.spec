@@ -111,7 +111,7 @@ tar zxf %{SOURCE2}
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_applnkdir}/Graphics/Viewers,%{_pixmapsdir}} \
 	$RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/man1}
- 
+
 %{__make} install \
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
