@@ -1,0 +1,137 @@
+diff -urN xv-3.10a.orig/Makefile xv-3.10a/Makefile
+--- xv-3.10a.orig/Makefile	Fri Oct 15 17:27:01 1999
++++ xv-3.10a/Makefile	Fri Oct 15 17:36:01 1999
+@@ -1,7 +1,7 @@
+ # Makefile for xv
+ 
+ # your C compiler (and options) of choice
+-CC = cc
++CC = gcc
+ # CC = gcc -ansi
+ 
+ # use this if you're using 'cc' on a DEC Alpha (OSF/1) or MIPS (Ultrix) system:
+@@ -14,7 +14,7 @@
+ #       -Wuninitialized -Wparentheses
+ 
+ 
+-CCOPTS = -O 
++CCOPTS = $(RPM_OPT_FLAGS)
+ 
+ 
+ ### NOTE: Sun running OpenWindows:
+@@ -45,45 +45,49 @@
+ ### if, for whatever reason, you're unable to get the JPEG library to compile
+ ### on your machine, *COMMENT OUT* the following lines
+ ###
+-JPEG    = -DDOJPEG
+-JPEGDIR = jpeg
+-JPEGINC = -I$(JPEGDIR)
+-JPEGLIB = $(JPEGDIR)/libjpeg.a
+-$(JPEGDIR)/jconfig.h:
+-	cd $(JPEGDIR) ; ./configure CC='$(CC)'
+-$(JPEGLIB):  $(JPEGDIR)/jconfig.h
+-	cd $(JPEGDIR) ; make
++#JPEG    = -DDOJPEG
++#JPEGDIR = jpeg
++#JPEGINC = -I$(JPEGDIR)
++#JPEGLIB = $(JPEGDIR)/libjpeg.a
++#$(JPEGDIR)/jconfig.h:
++#	cd $(JPEGDIR) ; ./configure CC='$(CC)'
++#$(JPEGLIB):  $(JPEGDIR)/jconfig.h
++#	cd $(JPEGDIR) ; make
++JPEGLIB = -ljpeg
+ 
+ 
+ ###
+ ### if, for whatever reason, you're unable to get the PNG library to compile
+ ### on your machine, *COMMENT OUT* the following lines
+ ###
+-PNG    = -DDOPNG
+-PNGDIR = /usr/local/src/libpng
+-PNGINC = -I$(PNGDIR)
+-PNGLIB = -L$(PNGDIR) -lpng
++#PNG    = -DDOPNG
++#PNGDIR = /usr/local/src/libpng
++#PNGINC = -I$(PNGDIR)
++#PNGLIB = -L$(PNGDIR) -lpng
++PNGLIB = -lpng
+ 
+ 
+ ###
+ ### if, for whatever reason, you're unable to get the PNG library to compile
+ ### on your machine, *COMMENT OUT* the following lines
+ ###
+-ZLIBDIR = /usr/local/src/zlib
+-ZLIBINC = -I$(ZLIBDIR)
+-ZLIBLIB = -L$(ZLIBDIR) -lz
++#ZLIBDIR = /usr/local/src/zlib
++#ZLIBINC = -I$(ZLIBDIR)
++#ZLIBLIB = -L$(ZLIBDIR) -lz
++ZLIBLIB = -lz
+ 
+ 
+ ###
+ ### if, for whatever reason, you're unable to get the TIFF library to compile
+ ### on your machine, *COMMENT OUT* the following lines
+ ###
+-TIFF    = -DDOTIFF
+-TIFFDIR = tiff
+-TIFFINC = -I$(TIFFDIR)
+-TIFFLIB = $(TIFFDIR)/libtiff.a
+-$(TIFFLIB):
+-	( cd $(TIFFDIR) ; make CC='$(CC)' )
++#TIFF    = -DDOTIFF
++#TIFFDIR = tiff
++#TIFFINC = -I$(TIFFDIR)
++#TIFFLIB = $(TIFFDIR)/libtiff.a
++#$(TIFFLIB):
++#	( cd $(TIFFDIR) ; make CC='$(CC)' )
++TIFFLIB = -ltiff
+ 
+ 
+ ###
+@@ -121,7 +125,7 @@
+ 
+ 
+ ### for LINUX, uncomment the following line
+-#MCHN = -DLINUX
++MCHN = -DLINUX
+ 
+ 
+ # For SCO 1.1 (UNIX 3.2v2) machines, uncomment the following:
+@@ -207,7 +211,7 @@
+ 	$(NODIRENT) $(VPRINTF) $(TIMERS) $(UNIX) $(BSDTYPES) $(RAND) \
+ 	$(DXWM) $(MCHN) $(PNG) $(PNGINC) $(ZLIBINC)
+ 
+-LIBS = -lX11 $(JPEGLIB) $(TIFFLIB) $(PNGLIB) $(ZLIBLIB) -lm
++LIBS = -lX11 $(JPEGLIB) $(TIFFLIB) $(PNGLIB) $(ZLIBLIB) -lm -L/usr/X11R6/lib
+ 
+ OBJS = 	xv.o xvevent.o xvroot.o xvmisc.o xvimage.o xvcolor.o xvsmooth.o \
+ 	xv24to8.o xvgif.o xvpm.o xvinfo.o xvctrl.o xvscrl.o xvalg.o \
+@@ -226,10 +230,10 @@
+ 
+ 
+ 
+-all: $(JPEGLIB) $(TIFFLIB) xv bggen vdcomp xcmap xvpictoppm
++all: xv bggen vdcomp xcmap xvpictoppm
+ 
+ 
+-xv: $(OBJS) $(JPEGLIB) $(TIFFLIB)
++xv: $(OBJS)
+ 	$(CC) -o xv $(CFLAGS) $(OBJS) $(LIBS)
+ 
+ bggen: bggen.c
+diff -urN xv-3.10a.orig/xv.h xv-3.10a/xv.h
+--- xv-3.10a.orig/xv.h	Fri Oct 15 17:27:01 1999
++++ xv-3.10a/xv.h	Fri Oct 15 17:33:35 1999
+@@ -115,10 +115,6 @@
+ 
+ #ifndef VMS
+ #  include <errno.h>
+-   extern int   errno;             /* SHOULD be in errno.h, but often isn't */
+-#  ifndef __NetBSD__
+-     extern char *sys_errlist[];     /* this too... */
+-#  endif
+ #endif
+ 
+ 

@@ -1,0 +1,108 @@
+This patch fixes an inability to GRAB or display XWD files on the eXceed
+X server running in 24-bits.  It may also fix GRAB problems on other X 
+servers.  It shouldn't *break* anything, and as such, can and should be
+applied by everybody.
+
+The bits_per_item of the returned XImage is less than bits_per_pixel, which
+is wrong, as far as I can tell.  (Hard to really know, as the X11 docs aren't
+at *all* clear on the subject.)  I do know that it breaks my code, and the netpbm
+code, and god only knows what else.
+
+Maybe they're wrong, maybe I'm wrong - who knows.  In any event, this patch 
+fixes it, as far as XV is concerned.
+
+Thanks to Nadim Saeed (nadim@xlnt.com)!
+
+--jhb
+
+
+
+*** xvgrab.c.orig	Thu Oct  7 10:41:15 1999
+--- xvgrab.c	Thu Oct  7 12:03:36 1999
+***************
+*** 641,648 ****
+  
+  
+    bits_per_item = image->bitmap_unit;
+-   bits_used = bits_per_item;
+    bits_per_pixel = image->bits_per_pixel;
+  
+    if (bits_per_pixel == 32) pixmask = 0xffffffff;
+    else pixmask = (((CARD32) 1) << bits_per_pixel) - 1;
+--- 641,667 ----
+  
+  
+    bits_per_item = image->bitmap_unit;
+    bits_per_pixel = image->bits_per_pixel;
++ 
++ 
++   /* add code for freako 'exceed' server, where bitmapunit = 8
++      and bitsperpix = 32 (and depth=24)... */
++ 
++   if (bits_per_item < bits_per_pixel) {
++     bits_per_item = bits_per_pixel;
++   
++     /* round bits_per_item up to next legal value, if necc */
++     if      (bits_per_item <  8) bits_per_item = 8;
++     else if (bits_per_item < 16) bits_per_item = 16;
++     else                         bits_per_item = 32;
++   }
++ 
++ 
++   /* which raises the question:  how (can?) you ever have a 24 bits per pix,
++      (ie, 3 bytes, no alpha/padding) */
++ 
++ 
++   bits_used = bits_per_item;  /* so it will get a new item first time */
+  
+    if (bits_per_pixel == 32) pixmask = 0xffffffff;
+    else pixmask = (((CARD32) 1) << bits_per_pixel) - 1;
+
+
+
+*** xvxwd.c.orig	Thu Oct  7 12:13:09 1999
+--- xvxwd.c	Thu Oct  7 12:13:13 1999
+***************
+*** 396,406 ****
+      h11P->pixmap_width;
+    
+    bits_per_item  = h11P->bitmap_unit;
+-   bits_used      = bits_per_item;
+    bits_per_pixel = h11P->bits_per_pixel;
+    byte_order     = h11P->byte_order;
+    bit_order      = h11P->bitmap_bit_order;
+    
+    if (bits_per_pixel == sizeof(pixel_mask) * 8)  pixel_mask = (CARD32) -1;
+    else pixel_mask = (1 << bits_per_pixel) - 1;
+    
+--- 396,425 ----
+      h11P->pixmap_width;
+    
+    bits_per_item  = h11P->bitmap_unit;
+    bits_per_pixel = h11P->bits_per_pixel;
+    byte_order     = h11P->byte_order;
+    bit_order      = h11P->bitmap_bit_order;
+    
++  
++   /* add sanity-code for freako 'exceed' server, where bitmapunit = 8
++      and bitsperpix = 32 (and depth=24)... */
++  
++   if (bits_per_item < bits_per_pixel) {
++     bits_per_item = bits_per_pixel;
++    
++     /* round bits_per_item up to next legal value, if necc */
++     if      (bits_per_item <  8) bits_per_item = 8;
++     else if (bits_per_item < 16) bits_per_item = 16;
++     else                         bits_per_item = 32;
++   }
++  
++  
++   /* which raises the question:  how (can?) you ever have a 24 bits per pix,
++      (ie, 3 bytes, no alpha/padding) */
++  
++  
++   bits_used      = bits_per_item;
++ 
+    if (bits_per_pixel == sizeof(pixel_mask) * 8)  pixel_mask = (CARD32) -1;
+    else pixel_mask = (1 << bits_per_pixel) - 1;
+    

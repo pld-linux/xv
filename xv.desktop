@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=xv
+Comment=XV Image Viewer and Conversion Util
+Comment[pl]=Przegl±darka o konwerter obrazków
+Exec=xv
+Terminal=0
+Type=Application
