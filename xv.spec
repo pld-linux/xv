@@ -1,4 +1,5 @@
 Summary:	X based image viewer for darned near all images
+Summary(pl):	Przegl±darka ró¿nego rodzaju plików graficznych pracuj±ca w X Window
 Summary(de):	X-basierender Bild-Viewer für praktische sämtliche Grafiken
 Summary(fr):	Visualisateur sous X pour quasiment tous les types d'images
 Summary(tr):	X tabanlý resim görüntüleyici
@@ -7,6 +8,7 @@ Version:	3.10a
 Release:	16
 Copyright:	Shareware
 Group:		X11/Applications/Graphics
+Group(pl):	X11/Aplikacje/Grafika
 Source0:	ftp://ftp.cis.upenn.edu/pub/xv/%{name}-%{version}.tar.gz
 Source1:	ftp://swrinde.nde.swri.edu/pub/png/applications/xv-3.10a-png-1.2d.tar.gz
 Source2:	xvman310a-html.tar.gz
@@ -37,6 +39,12 @@ we ship it with the permission of the authors.  It is a graphics
 viewer for many file types, including gif, jpg, tiff, xwd, etc.
 It also has manipulation features such as cropping, expanding, etc.
 Patched to include flmask, a popular feature in Japan.
+
+%description -l pl
+S³ynne 'xv' Johna Bradley'a. Jest to program shareware, ale udostêpniamy go
+za zgod± autora. Jest to przegl±darka plików graficznych w ró¿nych formatach,
+takich jak: gif, jpg, tiff, xwd i innych. Daje tak¿e mo¿liwo¶æ prostego
+mainupulowania obrazkiem. Zawiera obs³ugê flmask.
 
 %description -l de
 Dies ist das berühmte 'xv' von John Bradley, ein Shareware-
@@ -83,9 +91,9 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/applnk/Graphics/Viewers
-install -d $RPM_BUILD_ROOT/home/httpd/html/%{name}-%{version}
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/man1}
+install -d $RPM_BUILD_ROOT%{_datadir}/applnk/Graphics/Viewers \
+	$RPM_BUILD_ROOT/home/httpd/html/%{name}-%{version} \
+	$RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/man1}
  
 make install \
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
