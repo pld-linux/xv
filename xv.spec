@@ -5,28 +5,29 @@ Summary(fr):	Visualisateur sous X pour quasiment tous les types d'images
 Summary(tr):	X tabanlý resim görüntüleyici
 Name:		xv
 Version:	3.10a
-Release:	18
+Release:	19
 Copyright:	Shareware
 Group:		X11/Applications/Graphics
+Group(de):	X11/Applikationen/Grafik
 Group(pl):	X11/Aplikacje/Grafika
 Source0:	ftp://ftp.cis.upenn.edu/pub/xv/%{name}-%{version}.tar.gz
-Source1:	ftp://swrinde.nde.swri.edu/pub/png/applications/xv-3.10a-png-1.2d.tar.gz
-Source2:	xvman310a-html.tar.gz
-Source3:	xv.desktop
-Patch0:		xv-PLD.patch
-Patch1:		xv-FLmask.v2.1.patch
-Patch2:		xv-JPEG.patch
-Patch3:		xv-TIFF.patch
-Patch4:		xv-croppad.patch
-Patch5:		xv-deepcolor.patch
-Patch6:		xv-exceed_grab_patch.txt
-Patch7:		xv-gifpatch
-Patch8:		xv-grabpatch
-Patch9:		xv-longname.patch
-Patch10:	xv-mp-tiff-patch
-Patch11:	xv-pdf.patch
-Patch12:	xv-png-fix2.patch
-Patch13:	xv-vispatch
+Source1:	ftp://swrinde.nde.swri.edu/pub/png/applications/%{name}-%{version}-png-1.2d.tar.gz
+Source2:	%{name}man310a-html.tar.gz
+Source3:	%{name}.desktop
+Patch0:		%{name}-PLD.patch
+Patch1:		%{name}-FLmask.v2.1.patch
+Patch2:		%{name}-JPEG.patch
+Patch3:		%{name}-TIFF.patch
+Patch4:		%{name}-croppad.patch
+Patch5:		%{name}-deepcolor.patch
+Patch6:		%{name}-exceed_grab_patch.txt
+Patch7:		%{name}-gifpatch
+Patch8:		%{name}-grabpatch
+Patch9:		%{name}-longname.patch
+Patch10:	%{name}-mp-tiff-patch
+Patch11:	%{name}-pdf.patch
+Patch12:	%{name}-png-fix2.patch
+Patch13:	%{name}-vispatch
 URL:		http://www.trilon.com/xv/xv.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,37 +35,39 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_mandir		%{_prefix}/man
 
 %description
-This is the famous 'xv' by John Bradley. It is shareware, but we ship it
-with the permission of the authors. It is a graphics viewer for many file
-types, including gif, jpg, tiff, xwd, etc. It also has manipulation
-features such as cropping, expanding, etc. Patched to include flmask, a
-popular feature in Japan.
+This is the famous 'xv' by John Bradley. It is shareware, but we ship
+it with the permission of the authors. It is a graphics viewer for
+many file types, including gif, jpg, tiff, xwd, etc. It also has
+manipulation features such as cropping, expanding, etc. Patched to
+include flmask, a popular feature in Japan.
 
 %description -l pl
-S³ynne 'xv' Johna Bradley'a. Jest to program shareware, ale udostêpniamy go
-za zgod± autora. Jest to przegl±darka plików graficznych w ró¿nych
-formatach, takich jak: gif, jpg, tiff, xwd i innych. Daje tak¿e mo¿liwo¶æ
-prostego mainupulowania obrazkiem. Zawiera obs³ugê flmask.
+S³ynne 'xv' Johna Bradley'a. Jest to program shareware, ale
+udostêpniamy go za zgod± autora. Jest to przegl±darka plików
+graficznych w ró¿nych formatach, takich jak: gif, jpg, tiff, xwd i
+innych. Daje tak¿e mo¿liwo¶æ prostego mainupulowania obrazkiem.
+Zawiera obs³ugê flmask.
 
 %description -l de
-Dies ist das berühmte 'xv' von John Bradley, ein Shareware- Programm, das
-wir mit Erlaubnis des Autors liefern. Es ist ein Grafik-Viewer für diverse
-Dateitypen, einschließlich gif, funktionen wie Trimmen, Strecken u.ä. Mit
-flmask.
+Dies ist das berühmte 'xv' von John Bradley, ein Shareware- Programm,
+das wir mit Erlaubnis des Autors liefern. Es ist ein Grafik-Viewer für
+diverse Dateitypen, einschließlich gif, funktionen wie Trimmen,
+Strecken u.ä. Mit flmask.
 
 %description -l fr
-Le célébre xv de John Bradley. C'est shareware, mais nous le distribuons
-avec la permission de l'auteur. C'est un visualiseur graphique pour de
-nombreux formats de fichier dont gif, jpg, tiff, xwd, etc. Il offre aussi
-des fonctionnalités comme la capture, l'extension, la retouche de palette,
-etc. Flmask.
+Le célébre xv de John Bradley. C'est shareware, mais nous le
+distribuons avec la permission de l'auteur. C'est un visualiseur
+graphique pour de nombreux formats de fichier dont gif, jpg, tiff,
+xwd, etc. Il offre aussi des fonctionnalités comme la capture,
+l'extension, la retouche de palette, etc. Flmask.
 
 %description -l tr
-xv baþta PNG, GIF, JPG, BMP, XBM, XPM olmak üzere birçok resim dosyasýný
-görüntüleyebilir, deðiþik formatlarda kaydedebilir ve üzerinde
-boyutlandýrma, renk deðiþtirme gibi bazý temel iþlemleri yapabilir. Çok
-detaylý iþlemler yapamamasýna raðmen temel resim iþlemlerinde öncellikle
-kullanýlabilecek, kullanýþlý arayüzüne sahip bir programdýr. Flmask.
+xv baþta PNG, GIF, JPG, BMP, XBM, XPM olmak üzere birçok resim
+dosyasýný görüntüleyebilir, deðiþik formatlarda kaydedebilir ve
+üzerinde boyutlandýrma, renk deðiþtirme gibi bazý temel iþlemleri
+yapabilir. Çok detaylý iþlemler yapamamasýna raðmen temel resim
+iþlemlerinde öncellikle kullanýlabilecek, kullanýþlý arayüzüne sahip
+bir programdýr. Flmask.
 
 %prep
 %setup -q
@@ -87,12 +90,11 @@ patch -p1 --quiet < xvpng.diff
 tar zxf %{SOURCE2}
 
 %build
-%{__make}
+%{__make} CCOPTS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/applnk/Graphics/Viewers \
-	$RPM_BUILD_ROOT/home/httpd/html/%{name}-%{version} \
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers \
 	$RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/man1}
  
 %{__make} install \
@@ -100,11 +102,10 @@ install -d $RPM_BUILD_ROOT%{_datadir}/applnk/Graphics/Viewers \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
 	LIBDIR=$RPM_BUILD_ROOT%{_libdir}
 
-install %{SOURCE3} $RPM_BUILD_ROOT%{_datadir}/applnk/Graphics/Viewers
-cp -a xvman310a/* $RPM_BUILD_ROOT/home/httpd/html/%{name}-%{version}/
+install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers
+mv -f xvman310a manual
 
-gzip -9nf README docs/xvdocs.ps BUGS CHANGELOG IDEAS CPMASK 00_README \
-	$RPM_BUILD_ROOT%{_mandir}/man1/*
+gzip -9nf README docs/xvdocs.ps BUGS CHANGELOG IDEAS CPMASK 00_README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -112,8 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {README,docs/xvdocs.ps,BUGS,CHANGELOG,IDEAS,CPMASK,00_README}.gz
-%docdir /home/httpd/html/%{name}-%{version}
-%doc /home/httpd/html/%{name}-%{version}/*
-%{_datadir}/applnk/Graphics/Viewers/xv.desktop
+%doc manual
+%{_applnkdir}/Graphics/Viewers/xv.desktop
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
