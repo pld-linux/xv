@@ -52,4 +52,5 @@ Exec=xv
 Terminal=0
 Type=Application
 MimeType=application/pdf;application/postscript;image/gif;image/jpeg;image/png;image/tiff;image/x-xbm;image/x-xpm;
+Encoding=UTF-8
 # vi: encoding=utf-8
