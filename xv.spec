@@ -4,10 +4,12 @@ Summary(es):	Visualizador de imАgenes para X para cuasi todos los formatos de im
 Summary(fr):	Visualisateur sous X pour quasiment tous les types d'images
 Summary(pl):	Przegl╠darka rС©nego rodzaju plikСw graficznych pracuj╠ca w X Window
 Summary(pt_BR):	Visualizador de imagens para X para quase todos os formatos de imagens
+Summary(ru):	Программа для просмотра и преобразования файлов изображений для X
 Summary(tr):	X tabanlЩ resim gЖrЭntЭleyici
+Summary(uk):	Програма для перегляду та перетворення файл╕в зображень для X
 Name:		xv
 Version:	3.10a
-Release:	20
+Release:	21
 License:	Shareware
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.cis.upenn.edu/pub/xv/%{name}-%{version}.tar.gz
@@ -69,6 +71,21 @@ graficznych w rС©nych formatach, takich jak: gif, jpg, tiff, xwd i
 innych. Daje tak©e mo©liwo╤Ф prostego mainupulowania obrazkiem.
 Zawiera obsЁugЙ flmask.
 
+%description -l pt_BR
+Este И o famoso 'xv' de John Bradley. Ele И shareware, mas nСs o
+distribuimos com a permissЦo dos autores. и um visualizador grАfico
+para vАrios tipos de arquivos, incluindo gif, jpg, tiff, xwd, etc.
+TambИm possui caracterМsticas de manipulaГЦo como corte, expansЦo,
+etc.
+
+%description -l ru
+Xv - это программа для просмотра и преобразования изображений для X
+Window System. Xv умеет показывать GIF, JPEG, TIFF, PBM, PPM, PDF, X11
+bitmap, Utah Raster Toolkit RLE, PDS/VICAR, Sun Rasterfile, BMP, PCX,
+IRIS RGB, XPM, Targa, XWD, PostScript(TM) и PM. Xv также умеет делать
+простую обработку изображений - cropping, expanding, снимки экрана и
+т.п.
+
 %description -l tr
 xv baЧta PNG, GIF, JPG, BMP, XBM, XPM olmak Эzere birГok resim
 dosyasЩnЩ gЖrЭntЭleyebilir, deПiЧik formatlarda kaydedebilir ve
@@ -77,12 +94,12 @@ yapabilir. гok detaylЩ iЧlemler yapamamasЩna raПmen temel resim
 iЧlemlerinde Жncellikle kullanЩlabilecek, kullanЩЧlЩ arayЭzЭne sahip
 bir programdЩr. Flmask.
 
-%description -l pt_BR
-Este И o famoso 'xv' de John Bradley. Ele И shareware, mas nСs o
-distribuimos com a permissЦo dos autores. и um visualizador grАfico
-para vАrios tipos de arquivos, incluindo gif, jpg, tiff, xwd, etc.
-TambИm possui caracterМsticas de manipulaГЦo como corte, expansЦo,
-etc.
+%description -l uk
+Xv - це програма для перегляду та перетворення зображень для X Window
+System. Xv вм╕╓ показувати GIF, JPEG, TIFF, PBM, PPM, PDF, X11 bitmap,
+Utah Raster Toolkit RLE, PDS/VICAR, Sun Rasterfile, BMP, PCX, IRIS
+RGB, XPM, Targa, XWD, PostScript(TM) та PM. Xv також вм╕╓ робити
+просту обробку зображень - cropping, expanding, зн╕мки экрану ╕ т.╕.
 
 %prep
 %setup -q
@@ -123,14 +140,12 @@ mv -f xvman310a manual
 
 bzip2 -dc %{SOURCE5} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
-gzip -9nf README docs/xvdocs.ps BUGS CHANGELOG IDEAS CPMASK 00_README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz manual
+%doc README docs/xvdocs.ps BUGS CHANGELOG IDEAS CPMASK 00_README manual
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Graphics/Viewers/xv.desktop
 %{_pixmapsdir}/*
