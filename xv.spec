@@ -17,7 +17,8 @@ Source0:	ftp://ftp.cis.upenn.edu/pub/xv/%{name}-%{version}.tar.gz
 Source1:	ftp://swrinde.nde.swri.edu/pub/png/applications/%{name}-%{version}-png-1.2d.tar.gz
 Source2:	%{name}man310a-html.tar.gz
 Source3:	%{name}.desktop
-Source4:	%{name}-non-english-Xman-pages.tar.bz2
+Source4:	%{name}.png
+Source5:	%{name}-non-english-Xman-pages.tar.bz2
 Patch0:		%{name}-PLD.patch
 Patch1:		%{name}-FLmask.v2.1.patch
 Patch2:		%{name}-JPEG.patch
@@ -111,7 +112,7 @@ tar zxf %{SOURCE2}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers \
+install -d $RPM_BUILD_ROOT{%{_applnkdir}/Graphics/Viewers,%{_pixmapsdir}} \
 	$RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/man1}
  
 %{__make} install \
@@ -120,9 +121,10 @@ install -d $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers \
 	LIBDIR=$RPM_BUILD_ROOT%{_libdir}
 
 install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers
+install %{SOURCE4} $RPM_BUILD_ROOT%{_pixmapsdir}
 mv -f xvman310a manual
 
-bzip2 -dc %{SOURCE4} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
+bzip2 -dc %{SOURCE5} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
 gzip -9nf README docs/xvdocs.ps BUGS CHANGELOG IDEAS CPMASK 00_README
 
@@ -131,10 +133,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {README,docs/xvdocs.ps,BUGS,CHANGELOG,IDEAS,CPMASK,00_README}.gz
-%doc manual
-%{_applnkdir}/Graphics/Viewers/xv.desktop
+%doc *.gz manual
 %attr(755,root,root) %{_bindir}/*
+%{_applnkdir}/Graphics/Viewers/xv.desktop
+%{_pixmapsdir}/*
 %{_mandir}/man1/*
 %lang(fi) %{_mandir}/fi/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
