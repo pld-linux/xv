@@ -95,7 +95,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}/applnk/Graphics/Viewers \
 	$RPM_BUILD_ROOT/home/httpd/html/%{name}-%{version} \
 	$RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/man1}
  
-make install \
+%{__make} install \
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
 	LIBDIR=$RPM_BUILD_ROOT%{_libdir}
