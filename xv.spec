@@ -87,7 +87,7 @@ patch -p1 --quiet < xvpng.diff
 tar zxf %{SOURCE2}
 
 %build
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
