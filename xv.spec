@@ -105,7 +105,7 @@ patch -p1 --quiet < xvpng.diff
 tar zxf %{SOURCE2}
 
 %build
-%{__make} CCOPTS="%{rpmcflags}"
+%{__make} CCOPTS="%{rpmcflags} `pkg-config --cflags libpng12 2>/dev/null`"
 
 %install
 rm -rf $RPM_BUILD_ROOT
