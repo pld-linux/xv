@@ -4,7 +4,7 @@ Summary(fr):	Visualisateur sous X pour quasiment tous les types d'images
 Summary(tr):	X tabanlý resim görüntüleyici
 Name:		xv
 Version:	3.10a
-Release:	1
+Release:	16
 Copyright:	Shareware
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.cis.upenn.edu/pub/xv/%{name}-%{version}.tar.gz
@@ -12,9 +12,9 @@ Source1:	ftp://swrinde.nde.swri.edu/pub/png/applications/xv-3.10a-png-1.2d.tar.g
 Source2:	xvman310a-html.tar.gz
 Source3:	xv.desktop
 Patch0:		xv-PLD.patch
-Patch1:		xv-3.10a-FLmask.v2.1.patch
-Patch2:		xv-3.10a.JPEG-patch
-Patch3:		xv-3.10a.TIFF-patch
+Patch1:		xv-FLmask.v2.1.patch
+Patch2:		xv-JPEG.patch
+Patch3:		xv-TIFF.patch
 Patch4:		xv-croppad.patch
 Patch5:		xv-deepcolor.patch
 Patch6:		xv-exceed_grab_patch.txt
@@ -83,16 +83,16 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/man1}
 install -d $RPM_BUILD_ROOT%{_datadir}/applnk/Graphics/Viewers
 install -d $RPM_BUILD_ROOT/home/httpd/html/%{name}-%{version}
-
-make install\
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/man1}
+ 
+make install \
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
 	LIBDIR=$RPM_BUILD_ROOT%{_libdir}
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/*
+make install DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE3} $RPM_BUILD_ROOT%{_datadir}/applnk/Graphics/Viewers
 cp -a xvman310a/* $RPM_BUILD_ROOT/home/httpd/html/%{name}-%{version}/
