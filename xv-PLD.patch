@@ -31,7 +31,7 @@ diff -urN xv-3.10a.orig/Makefile xv-3.10a/Makefile
 -	cd $(JPEGDIR) ; ./configure CC='$(CC)'
 -$(JPEGLIB):  $(JPEGDIR)/jconfig.h
 -	cd $(JPEGDIR) ; make
-+#JPEG    = -DDOJPEG
++JPEG    = -DDOJPEG
 +#JPEGDIR = jpeg
 +#JPEGINC = -I$(JPEGDIR)
 +#JPEGLIB = $(JPEGDIR)/libjpeg.a
@@ -50,7 +50,7 @@ diff -urN xv-3.10a.orig/Makefile xv-3.10a/Makefile
 -PNGDIR = /usr/local/src/libpng
 -PNGINC = -I$(PNGDIR)
 -PNGLIB = -L$(PNGDIR) -lpng
-+#PNG    = -DDOPNG
++PNG    = -DDOPNG
 +#PNGDIR = /usr/local/src/libpng
 +#PNGINC = -I$(PNGDIR)
 +#PNGLIB = -L$(PNGDIR) -lpng
@@ -80,7 +80,7 @@ diff -urN xv-3.10a.orig/Makefile xv-3.10a/Makefile
 -TIFFLIB = $(TIFFDIR)/libtiff.a
 -$(TIFFLIB):
 -	( cd $(TIFFDIR) ; make CC='$(CC)' )
-+#TIFF    = -DDOTIFF
++TIFF    = -DDOTIFF
 +#TIFFDIR = tiff
 +#TIFFINC = -I$(TIFFDIR)
 +#TIFFLIB = $(TIFFDIR)/libtiff.a
