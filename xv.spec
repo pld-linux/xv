@@ -92,8 +92,6 @@ make install \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
 	LIBDIR=$RPM_BUILD_ROOT%{_libdir}
 
-make install DESTDIR=$RPM_BUILD_ROOT
-
 install %{SOURCE3} $RPM_BUILD_ROOT%{_datadir}/applnk/Graphics/Viewers
 cp -a xvman310a/* $RPM_BUILD_ROOT/home/httpd/html/%{name}-%{version}/
 
