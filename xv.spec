@@ -5,7 +5,7 @@ Summary(fr):	Visualisateur sous X pour quasiment tous les types d'images
 Summary(tr):	X tabanlý resim görüntüleyici
 Name:		xv
 Version:	3.10a
-Release:	19
+Release:	20
 Copyright:	Shareware
 Group:		X11/Applications/Graphics
 Group(de):	X11/Applikationen/Grafik
@@ -14,6 +14,7 @@ Source0:	ftp://ftp.cis.upenn.edu/pub/xv/%{name}-%{version}.tar.gz
 Source1:	ftp://swrinde.nde.swri.edu/pub/png/applications/%{name}-%{version}-png-1.2d.tar.gz
 Source2:	%{name}man310a-html.tar.gz
 Source3:	%{name}.desktop
+Source4:	%{name}-non-english-Xman-pages.tar.bz2
 Patch0:		%{name}-PLD.patch
 Patch1:		%{name}-FLmask.v2.1.patch
 Patch2:		%{name}-JPEG.patch
@@ -105,6 +106,8 @@ install -d $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers \
 install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers
 mv -f xvman310a manual
 
+bzip2 -dc %{SOURCE4} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
+
 gzip -9nf README docs/xvdocs.ps BUGS CHANGELOG IDEAS CPMASK 00_README
 
 %clean
@@ -117,3 +120,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_applnkdir}/Graphics/Viewers/xv.desktop
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
+%lang(fi) %{_mandir}/fi/man1/*
+%lang(pl) %{_mandir}/pl/man1/*
