@@ -5,7 +5,7 @@ Summary(fr):	Visualisateur sous X pour quasiment tous les types d'images
 Summary(tr):	X tabanlý resim görüntüleyici
 Name:		xv
 Version:	3.10a
-Release:	17
+Release:	18
 Copyright:	Shareware
 Group:		X11/Applications/Graphics
 Group(pl):	X11/Aplikacje/Grafika
