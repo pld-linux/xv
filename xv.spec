@@ -13,6 +13,7 @@ Release:	22
 License:	Shareware
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.cis.upenn.edu/pub/xv/%{name}-%{version}.tar.gz
+# Source0-md5:	2d4fbeec1561304362781cc8e2f7f72d
 Source1:	ftp://swrinde.nde.swri.edu/pub/png/applications/%{name}-%{version}-png-1.2d.tar.gz
 Source2:	%{name}man310a-html.tar.gz
 Source3:	%{name}.desktop
