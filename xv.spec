@@ -9,7 +9,7 @@ Summary(tr):	X tabanlЩ resim gЖrЭntЭleyici
 Summary(uk):	Програма для перегляду та перетворення файл╕в зображень для X
 Name:		xv
 Version:	3.10a
-Release:	24
+Release:	25
 License:	Shareware
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.cis.upenn.edu/pub/xv/%{name}-%{version}.tar.gz
@@ -40,6 +40,7 @@ URL:		http://www.trilon.com/xv/xv.html
 BuildRequires:	libjpeg-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libpng-devel
+BuildRequires:	sed
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 
@@ -125,7 +126,7 @@ patch -p1 --quiet < xvpng.diff
 %patch12 -p0
 %patch13 -p0
 tar zxf %{SOURCE2}
-sed 's,/usr/X11R6/lib,/usr/X11R6/%{_lib},' Makefile > M; 
+sed 's,/usr/X11R6/lib,/usr/X11R6/%{_lib},' Makefile > M
 mv -f M Makefile
 
 %build
