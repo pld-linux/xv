@@ -15,10 +15,13 @@ Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.cis.upenn.edu/pub/xv/%{name}-%{version}.tar.gz
 # Source0-md5:	2d4fbeec1561304362781cc8e2f7f72d
 Source1:	ftp://swrinde.nde.swri.edu/pub/png/applications/%{name}-%{version}-png-1.2d.tar.gz
+# Source1-md5:	c8cbe14db6e2104ed4eb5330cdaba420
 Source2:	%{name}man310a-html.tar.gz
+# Source2-md5:	78dce344e3e85faf01e1f13014aa659b
 Source3:	%{name}.desktop
 Source4:	%{name}.png
 Source5:	%{name}-non-english-Xman-pages.tar.bz2
+# Source5-md5:	4e5a6582ad76974309ca8bf8fb56b671
 Patch0:		%{name}-PLD.patch
 Patch1:		%{name}-FLmask.v2.1.patch
 Patch2:		%{name}-JPEG.patch
