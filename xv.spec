@@ -5,7 +5,7 @@ Summary(fr):	Visualisateur sous X pour quasiment tous les types d'images
 Summary(tr):	X tabanlý resim görüntüleyici
 Name:		xv
 Version:	3.10a
-Release:	16
+Release:	17
 Copyright:	Shareware
 Group:		X11/Applications/Graphics
 Group(pl):	X11/Aplikacje/Grafika
@@ -31,40 +31,40 @@ URL:		http://www.trilon.com/xv/xv.html
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define		_prefix		/usr/X11R6
-%define		_mandir		/usr/X11R6/man
+%define		_mandir		%{_prefix}/man
 
 %description
-This is the famous 'xv' by John Bradley.  It is shareware, but
-we ship it with the permission of the authors.  It is a graphics
-viewer for many file types, including gif, jpg, tiff, xwd, etc.
-It also has manipulation features such as cropping, expanding, etc.
-Patched to include flmask, a popular feature in Japan.
+This is the famous 'xv' by John Bradley. It is shareware, but we ship it
+with the permission of the authors. It is a graphics viewer for many file
+types, including gif, jpg, tiff, xwd, etc. It also has manipulation
+features such as cropping, expanding, etc. Patched to include flmask, a
+popular feature in Japan.
 
 %description -l pl
 S³ynne 'xv' Johna Bradley'a. Jest to program shareware, ale udostêpniamy go
-za zgod± autora. Jest to przegl±darka plików graficznych w ró¿nych formatach,
-takich jak: gif, jpg, tiff, xwd i innych. Daje tak¿e mo¿liwo¶æ prostego
-mainupulowania obrazkiem. Zawiera obs³ugê flmask.
+za zgod± autora. Jest to przegl±darka plików graficznych w ró¿nych
+formatach, takich jak: gif, jpg, tiff, xwd i innych. Daje tak¿e mo¿liwo¶æ
+prostego mainupulowania obrazkiem. Zawiera obs³ugê flmask.
 
 %description -l de
-Dies ist das berühmte 'xv' von John Bradley, ein Shareware-
-Programm, das wir mit Erlaubnis des Autors liefern. Es ist
-ein Grafik-Viewer für diverse Dateitypen, einschließlich gif, 
-funktionen wie Trimmen, Strecken u.ä.  Mit flmask.
+Dies ist das berühmte 'xv' von John Bradley, ein Shareware- Programm, das
+wir mit Erlaubnis des Autors liefern. Es ist ein Grafik-Viewer für diverse
+Dateitypen, einschließlich gif, funktionen wie Trimmen, Strecken u.ä. Mit
+flmask.
 
 %description -l fr
 Le célébre xv de John Bradley. C'est shareware, mais nous le distribuons
-avec la permission de l'auteur. C'est un visualiseur graphique pour
-de nombreux formats de fichier dont gif, jpg, tiff, xwd, etc.
-Il offre aussi des fonctionnalités comme la capture, l'extension,
-la retouche de palette, etc.  Flmask.
+avec la permission de l'auteur. C'est un visualiseur graphique pour de
+nombreux formats de fichier dont gif, jpg, tiff, xwd, etc. Il offre aussi
+des fonctionnalités comme la capture, l'extension, la retouche de palette,
+etc. Flmask.
 
 %description -l tr
 xv baþta PNG, GIF, JPG, BMP, XBM, XPM olmak üzere birçok resim dosyasýný
-görüntüleyebilir, deðiþik formatlarda kaydedebilir ve üzerinde boyutlandýrma,
-renk deðiþtirme gibi bazý temel iþlemleri yapabilir. Çok detaylý iþlemler
-yapamamasýna raðmen temel resim iþlemlerinde öncellikle kullanýlabilecek,
-kullanýþlý arayüzüne sahip bir programdýr.  Flmask.
+görüntüleyebilir, deðiþik formatlarda kaydedebilir ve üzerinde
+boyutlandýrma, renk deðiþtirme gibi bazý temel iþlemleri yapabilir. Çok
+detaylý iþlemler yapamamasýna raðmen temel resim iþlemlerinde öncellikle
+kullanýlabilecek, kullanýþlý arayüzüne sahip bir programdýr. Flmask.
 
 %prep
 %setup -q
