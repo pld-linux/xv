@@ -28,7 +28,7 @@ Patch11:	xv-pdf.patch
 Patch12:	xv-png-fix2.patch
 Patch13:	xv-vispatch
 URL:		http://www.trilon.com/xv/xv.html
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
