@@ -53,4 +53,5 @@ Terminal=false
 Type=Application
 MimeType=application/pdf;application/postscript;image/gif;image/jpeg;image/png;image/tiff;image/x-xbm;image/x-xpm;
 Encoding=UTF-8
+Categories=Application;Graphics;Viewer;
 # vi: encoding=utf-8
