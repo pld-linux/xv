@@ -35,8 +35,6 @@ Patch13:	%{name}-vispatch
 URL:		http://www.trilon.com/xv/xv.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 This is the famous 'xv' by John Bradley. It is shareware, but we ship
