@@ -8,7 +8,7 @@ Summary(tr):	X tabanlý resim görüntüleyici
 Name:		xv
 Version:	3.10a
 Release:	20
-Copyright:	Shareware
+License:	Shareware
 Group:		X11/Applications/Graphics
 Group(de):	X11/Applikationen/Grafik
 Group(pl):	X11/Aplikacje/Grafika
