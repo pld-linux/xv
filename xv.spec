@@ -43,7 +43,6 @@ BuildRequires:	libpng-devel
 BuildRequires:	sed
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 This is the famous 'xv' by John Bradley. It is shareware, but we ship
 it with the permission of the authors. It is a graphics viewer for
@@ -71,11 +70,11 @@ xwd, etc. Il offre aussi des fonctionnalités comme la capture,
 l'extension, la retouche de palette, etc. Flmask.
 
 %description -l pl
-S³ynne 'xv' Johna Bradley'a. Jest to program shareware, ale
+S³ynne 'xv' Johna Bradleya. Jest to program shareware, ale
 udostêpniamy go za zgod± autora. Jest to przegl±darka plików
 graficznych w ró¿nych formatach, takich jak: gif, jpg, tiff, xwd i
-innych. Daje tak¿e mo¿liwo¶æ prostego manipulowania obrazkiem.
-Zawiera obs³ugê flmask.
+innych. Ma te¿ proste mo¿liwo¶ci obróbki obrazków, takie jak obcinanie
+czy rozszerzanie. Zawiera obs³ugê flmask.
 
 %description -l pt_BR
 Este é o famoso 'xv' de John Bradley. Ele é shareware, mas nós o
