@@ -9,7 +9,7 @@ Summary(tr):	X tabanlЩ resim gЖrЭntЭleyici
 Summary(uk):	Програма для перегляду та перетворення файл╕в зображень для X
 Name:		xv
 Version:	3.10a
-Release:	22
+Release:	23
 License:	Shareware
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.cis.upenn.edu/pub/xv/%{name}-%{version}.tar.gz
@@ -131,7 +131,7 @@ tar zxf %{SOURCE2}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Graphics/Viewers,%{_pixmapsdir}} \
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}} \
 	$RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/man1}
 
 %{__make} install \
@@ -139,7 +139,7 @@ install -d $RPM_BUILD_ROOT{%{_applnkdir}/Graphics/Viewers,%{_pixmapsdir}} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
 	LIBDIR=$RPM_BUILD_ROOT%{_libdir}
 
-install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers
+install %{SOURCE3} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE4} $RPM_BUILD_ROOT%{_pixmapsdir}
 mv -f xvman310a manual
 
@@ -152,7 +152,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README docs/xvdocs.ps BUGS CHANGELOG IDEAS CPMASK 00_README manual
 %attr(755,root,root) %{_bindir}/*
-%{_applnkdir}/Graphics/Viewers/xv.desktop
+%{_desktopdir}/xv.desktop
 %{_pixmapsdir}/*
 %{_mandir}/man1/*
 %lang(fi) %{_mandir}/fi/man1/*
