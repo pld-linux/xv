@@ -74,7 +74,7 @@ l'extension, la retouche de palette, etc. Flmask.
 S³ynne 'xv' Johna Bradley'a. Jest to program shareware, ale
 udostêpniamy go za zgod± autora. Jest to przegl±darka plików
 graficznych w ró¿nych formatach, takich jak: gif, jpg, tiff, xwd i
-innych. Daje tak¿e mo¿liwo¶æ prostego mainupulowania obrazkiem.
+innych. Daje tak¿e mo¿liwo¶æ prostego manipulowania obrazkiem.
 Zawiera obs³ugê flmask.
 
 %description -l pt_BR
