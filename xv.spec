@@ -9,7 +9,7 @@ Summary(tr):	X tabanlЩ resim gЖrЭntЭleyici
 Summary(uk):	Програма для перегляду та перетворення файл╕в зображень для X
 Name:		xv
 Version:	3.10a
-Release:	27
+Release:	28
 License:	Shareware
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.cis.upenn.edu/pub/xv/%{name}-%{version}.tar.gz
@@ -36,11 +36,13 @@ Patch10:	%{name}-mp-tiff-patch
 Patch11:	%{name}-pdf.patch
 Patch12:	%{name}-png-fix2.patch
 Patch13:	%{name}-vispatch
+Patch14:	%{name}-c.patch
 URL:		http://www.trilon.com/xv/xv.html
 BuildRequires:	libjpeg-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libpng-devel
 BuildRequires:	sed
+BuildRequires:	xorg-lib-libX11-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -124,14 +126,14 @@ patch -p1 --quiet < xvpng.diff
 %patch11 -p0
 %patch12 -p0
 %patch13 -p0
+%patch14 -p1
 tar zxf %{SOURCE2}
-sed 's,/usr/X11R6/lib,/usr/X11R6/%{_lib},' Makefile > M
-mv -f M Makefile
 
 %build
 %{__make} \
+	CC="%{__cc}" \
 	CCOPTS="%{rpmcflags} `pkg-config --cflags libpng12 2>/dev/null`" \
-	CC="%{__cc}"
+	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
