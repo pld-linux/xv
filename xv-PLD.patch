@@ -104,7 +104,7 @@ diff -urN xv-3.10a.orig/Makefile xv-3.10a/Makefile
  	$(DXWM) $(MCHN) $(PNG) $(PNGINC) $(ZLIBINC)
  
 -LIBS = -lX11 $(JPEGLIB) $(TIFFLIB) $(PNGLIB) $(ZLIBLIB) -lm
-+LIBS = -lX11 $(JPEGLIB) $(TIFFLIB) $(PNGLIB) $(ZLIBLIB) -lm -L/usr/X11R6/lib
++LIBS = $(LDFLAGS) -lX11 $(JPEGLIB) $(TIFFLIB) $(PNGLIB) $(ZLIBLIB) -lm
  
  OBJS = 	xv.o xvevent.o xvroot.o xvmisc.o xvimage.o xvcolor.o xvsmooth.o \
  	xv24to8.o xvgif.o xvpm.o xvinfo.o xvctrl.o xvscrl.o xvalg.o \
