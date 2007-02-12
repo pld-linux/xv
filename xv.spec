@@ -1,12 +1,12 @@
 Summary:	X based image viewer for darned near all images
-Summary(de):	X-basierender Bild-Viewer für praktische sämtliche Grafiken
-Summary(es):	Visualizador de imágenes para X para cuasi todos los formatos de imágenes
-Summary(fr):	Visualisateur sous X pour quasiment tous les types d'images
-Summary(pl):	Przegl±darka ró¿nego rodzaju plików graficznych pracuj±ca w X Window
-Summary(pt_BR):	Visualizador de imagens para X para quase todos os formatos de imagens
-Summary(ru):	ğÒÏÇÒÁÍÍÁ ÄÌÑ ĞÒÏÓÍÏÔÒÁ É ĞÒÅÏÂÒÁÚÏ×ÁÎÉÑ ÆÁÊÌÏ× ÉÚÏÂÒÁÖÅÎÉÊ ÄÌÑ X
-Summary(tr):	X tabanlı resim görüntüleyici
-Summary(uk):	ğÒÏÇÒÁÍÁ ÄÌÑ ĞÅÒÅÇÌÑÄÕ ÔÁ ĞÅÒÅÔ×ÏÒÅÎÎÑ ÆÁÊÌ¦× ÚÏÂÒÁÖÅÎØ ÄÌÑ X
+Summary(de.UTF-8):   X-basierender Bild-Viewer fÃ¼r praktische sÃ¤mtliche Grafiken
+Summary(es.UTF-8):   Visualizador de imÃ¡genes para X para cuasi todos los formatos de imÃ¡genes
+Summary(fr.UTF-8):   Visualisateur sous X pour quasiment tous les types d'images
+Summary(pl.UTF-8):   PrzeglÄ…darka rÃ³Å¼nego rodzaju plikÃ³w graficznych pracujÄ…ca w X Window
+Summary(pt_BR.UTF-8):   Visualizador de imagens para X para quase todos os formatos de imagens
+Summary(ru.UTF-8):   ĞŸÑ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ¼Ğ° Ğ´Ğ»Ñ Ğ¿Ñ€Ğ¾ÑĞ¼Ğ¾Ñ‚Ñ€Ğ° Ğ¸ Ğ¿Ñ€ĞµĞ¾Ğ±Ñ€Ğ°Ğ·Ğ¾Ğ²Ğ°Ğ½Ğ¸Ñ Ñ„Ğ°Ğ¹Ğ»Ğ¾Ğ² Ğ¸Ğ·Ğ¾Ğ±Ñ€Ğ°Ğ¶ĞµĞ½Ğ¸Ğ¹ Ğ´Ğ»Ñ X
+Summary(tr.UTF-8):   X tabanlÄ± resim gÃ¶rÃ¼ntÃ¼leyici
+Summary(uk.UTF-8):   ĞŸÑ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ° Ğ´Ğ»Ñ Ğ¿ĞµÑ€ĞµĞ³Ğ»ÑĞ´Ñƒ Ñ‚Ğ° Ğ¿ĞµÑ€ĞµÑ‚Ğ²Ğ¾Ñ€ĞµĞ½Ğ½Ñ Ñ„Ğ°Ğ¹Ğ»Ñ–Ğ² Ğ·Ğ¾Ğ±Ñ€Ğ°Ğ¶ĞµĞ½ÑŒ Ğ´Ğ»Ñ X
 Name:		xv
 Version:	3.10a
 Release:	28
@@ -52,61 +52,61 @@ many file types, including gif, jpg, tiff, xwd, etc. It also has
 manipulation features such as cropping, expanding, etc. Patched to
 include flmask, a popular feature in Japan.
 
-%description -l de
-Dies ist das berühmte 'xv' von John Bradley, ein Shareware- Programm,
-das wir mit Erlaubnis des Autors liefern. Es ist ein Grafik-Viewer für
-diverse Dateitypen, einschließlich gif, funktionen wie Trimmen,
-Strecken u.ä. Mit flmask.
+%description -l de.UTF-8
+Dies ist das berÃ¼hmte 'xv' von John Bradley, ein Shareware- Programm,
+das wir mit Erlaubnis des Autors liefern. Es ist ein Grafik-Viewer fÃ¼r
+diverse Dateitypen, einschlieÃŸlich gif, funktionen wie Trimmen,
+Strecken u.Ã¤. Mit flmask.
 
-%description -l es
+%description -l es.UTF-8
 Este es el famoso 'xv' de John Bradley. Es shareware, pero nosotros lo
-distribuimos con la permisión de los autores. Es un visor gráfico para
-varios tipos de archivos, incluyendo gif, jpg, tiff, xwd, etc. También
-posee características de manejo como corte, expansión, etc.
+distribuimos con la permisiÃ³n de los autores. Es un visor grÃ¡fico para
+varios tipos de archivos, incluyendo gif, jpg, tiff, xwd, etc. TambiÃ©n
+posee caracterÃ­sticas de manejo como corte, expansiÃ³n, etc.
 
-%description -l fr
-Le célébre xv de John Bradley. C'est shareware, mais nous le
+%description -l fr.UTF-8
+Le cÃ©lÃ©bre xv de John Bradley. C'est shareware, mais nous le
 distribuons avec la permission de l'auteur. C'est un visualiseur
 graphique pour de nombreux formats de fichier dont gif, jpg, tiff,
-xwd, etc. Il offre aussi des fonctionnalités comme la capture,
+xwd, etc. Il offre aussi des fonctionnalitÃ©s comme la capture,
 l'extension, la retouche de palette, etc. Flmask.
 
-%description -l pl
-S³ynne 'xv' Johna Bradleya. Jest to program shareware, ale
-udostêpniamy go za zgod± autora. Jest to przegl±darka plików
-graficznych w ró¿nych formatach, takich jak: gif, jpg, tiff, xwd i
-innych. Ma te¿ proste mo¿liwo¶ci obróbki obrazków, takie jak obcinanie
-czy rozszerzanie. Zawiera obs³ugê flmask.
+%description -l pl.UTF-8
+SÅ‚ynne 'xv' Johna Bradleya. Jest to program shareware, ale
+udostÄ™pniamy go za zgodÄ… autora. Jest to przeglÄ…darka plikÃ³w
+graficznych w rÃ³Å¼nych formatach, takich jak: gif, jpg, tiff, xwd i
+innych. Ma teÅ¼ proste moÅ¼liwoÅ›ci obrÃ³bki obrazkÃ³w, takie jak obcinanie
+czy rozszerzanie. Zawiera obsÅ‚ugÄ™ flmask.
 
-%description -l pt_BR
-Este é o famoso 'xv' de John Bradley. Ele é shareware, mas nós o
-distribuimos com a permissão dos autores. É um visualizador gráfico
-para vários tipos de arquivos, incluindo gif, jpg, tiff, xwd, etc.
-Também possui características de manipulação como corte, expansão,
+%description -l pt_BR.UTF-8
+Este Ã© o famoso 'xv' de John Bradley. Ele Ã© shareware, mas nÃ³s o
+distribuimos com a permissÃ£o dos autores. Ã‰ um visualizador grÃ¡fico
+para vÃ¡rios tipos de arquivos, incluindo gif, jpg, tiff, xwd, etc.
+TambÃ©m possui caracterÃ­sticas de manipulaÃ§Ã£o como corte, expansÃ£o,
 etc.
 
-%description -l ru
-Xv - ÜÔÏ ĞÒÏÇÒÁÍÍÁ ÄÌÑ ĞÒÏÓÍÏÔÒÁ É ĞÒÅÏÂÒÁÚÏ×ÁÎÉÑ ÉÚÏÂÒÁÖÅÎÉÊ ÄÌÑ X
-Window System. Xv ÕÍÅÅÔ ĞÏËÁÚÙ×ÁÔØ GIF, JPEG, TIFF, PBM, PPM, PDF, X11
+%description -l ru.UTF-8
+Xv - ÑÑ‚Ğ¾ Ğ¿Ñ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ¼Ğ° Ğ´Ğ»Ñ Ğ¿Ñ€Ğ¾ÑĞ¼Ğ¾Ñ‚Ñ€Ğ° Ğ¸ Ğ¿Ñ€ĞµĞ¾Ğ±Ñ€Ğ°Ğ·Ğ¾Ğ²Ğ°Ğ½Ğ¸Ñ Ğ¸Ğ·Ğ¾Ğ±Ñ€Ğ°Ğ¶ĞµĞ½Ğ¸Ğ¹ Ğ´Ğ»Ñ X
+Window System. Xv ÑƒĞ¼ĞµĞµÑ‚ Ğ¿Ğ¾ĞºĞ°Ğ·Ñ‹Ğ²Ğ°Ñ‚ÑŒ GIF, JPEG, TIFF, PBM, PPM, PDF, X11
 bitmap, Utah Raster Toolkit RLE, PDS/VICAR, Sun Rasterfile, BMP, PCX,
-IRIS RGB, XPM, Targa, XWD, PostScript(TM) É PM. Xv ÔÁËÖÅ ÕÍÅÅÔ ÄÅÌÁÔØ
-ĞÒÏÓÔÕÀ ÏÂÒÁÂÏÔËÕ ÉÚÏÂÒÁÖÅÎÉÊ - cropping, expanding, ÓÎÉÍËÉ ÜËÒÁÎÁ É
-Ô.Ğ.
+IRIS RGB, XPM, Targa, XWD, PostScript(TM) Ğ¸ PM. Xv Ñ‚Ğ°ĞºĞ¶Ğµ ÑƒĞ¼ĞµĞµÑ‚ Ğ´ĞµĞ»Ğ°Ñ‚ÑŒ
+Ğ¿Ñ€Ğ¾ÑÑ‚ÑƒÑ Ğ¾Ğ±Ñ€Ğ°Ğ±Ğ¾Ñ‚ĞºÑƒ Ğ¸Ğ·Ğ¾Ğ±Ñ€Ğ°Ğ¶ĞµĞ½Ğ¸Ğ¹ - cropping, expanding, ÑĞ½Ğ¸Ğ¼ĞºĞ¸ ÑĞºÑ€Ğ°Ğ½Ğ° Ğ¸
+Ñ‚.Ğ¿.
 
-%description -l tr
-xv başta PNG, GIF, JPG, BMP, XBM, XPM olmak üzere birçok resim
-dosyasını görüntüleyebilir, değişik formatlarda kaydedebilir ve
-üzerinde boyutlandırma, renk değiştirme gibi bazı temel işlemleri
-yapabilir. Çok detaylı işlemler yapamamasına rağmen temel resim
-işlemlerinde öncellikle kullanılabilecek, kullanışlı arayüzüne sahip
-bir programdır. Flmask.
+%description -l tr.UTF-8
+xv baÅŸta PNG, GIF, JPG, BMP, XBM, XPM olmak Ã¼zere birÃ§ok resim
+dosyasÄ±nÄ± gÃ¶rÃ¼ntÃ¼leyebilir, deÄŸiÅŸik formatlarda kaydedebilir ve
+Ã¼zerinde boyutlandÄ±rma, renk deÄŸiÅŸtirme gibi bazÄ± temel iÅŸlemleri
+yapabilir. Ã‡ok detaylÄ± iÅŸlemler yapamamasÄ±na raÄŸmen temel resim
+iÅŸlemlerinde Ã¶ncellikle kullanÄ±labilecek, kullanÄ±ÅŸlÄ± arayÃ¼zÃ¼ne sahip
+bir programdÄ±r. Flmask.
 
-%description -l uk
-Xv - ÃÅ ĞÒÏÇÒÁÍÁ ÄÌÑ ĞÅÒÅÇÌÑÄÕ ÔÁ ĞÅÒÅÔ×ÏÒÅÎÎÑ ÚÏÂÒÁÖÅÎØ ÄÌÑ X Window
-System. Xv ×Í¦¤ ĞÏËÁÚÕ×ÁÔÉ GIF, JPEG, TIFF, PBM, PPM, PDF, X11 bitmap,
+%description -l uk.UTF-8
+Xv - Ñ†Ğµ Ğ¿Ñ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ° Ğ´Ğ»Ñ Ğ¿ĞµÑ€ĞµĞ³Ğ»ÑĞ´Ñƒ Ñ‚Ğ° Ğ¿ĞµÑ€ĞµÑ‚Ğ²Ğ¾Ñ€ĞµĞ½Ğ½Ñ Ğ·Ğ¾Ğ±Ñ€Ğ°Ğ¶ĞµĞ½ÑŒ Ğ´Ğ»Ñ X Window
+System. Xv Ğ²Ğ¼Ñ–Ñ” Ğ¿Ğ¾ĞºĞ°Ğ·ÑƒĞ²Ğ°Ñ‚Ğ¸ GIF, JPEG, TIFF, PBM, PPM, PDF, X11 bitmap,
 Utah Raster Toolkit RLE, PDS/VICAR, Sun Rasterfile, BMP, PCX, IRIS
-RGB, XPM, Targa, XWD, PostScript(TM) ÔÁ PM. Xv ÔÁËÏÖ ×Í¦¤ ÒÏÂÉÔÉ
-ĞÒÏÓÔÕ ÏÂÒÏÂËÕ ÚÏÂÒÁÖÅÎØ - cropping, expanding, ÚÎ¦ÍËÉ ÜËÒÁÎÕ ¦ Ô.¦.
+RGB, XPM, Targa, XWD, PostScript(TM) Ñ‚Ğ° PM. Xv Ñ‚Ğ°ĞºĞ¾Ğ¶ Ğ²Ğ¼Ñ–Ñ” Ñ€Ğ¾Ğ±Ğ¸Ñ‚Ğ¸
+Ğ¿Ñ€Ğ¾ÑÑ‚Ñƒ Ğ¾Ğ±Ñ€Ğ¾Ğ±ĞºÑƒ Ğ·Ğ¾Ğ±Ñ€Ğ°Ğ¶ĞµĞ½ÑŒ - cropping, expanding, Ğ·Ğ½Ñ–Ğ¼ĞºĞ¸ ÑĞºÑ€Ğ°Ğ½Ñƒ Ñ– Ñ‚.Ñ–.
 
 %prep
 %setup -q
