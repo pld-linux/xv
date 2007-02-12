@@ -1,12 +1,12 @@
 Summary:	X based image viewer for darned near all images
-Summary(de.UTF-8):   X-basierender Bild-Viewer für praktische sämtliche Grafiken
-Summary(es.UTF-8):   Visualizador de imágenes para X para cuasi todos los formatos de imágenes
-Summary(fr.UTF-8):   Visualisateur sous X pour quasiment tous les types d'images
-Summary(pl.UTF-8):   Przeglądarka różnego rodzaju plików graficznych pracująca w X Window
-Summary(pt_BR.UTF-8):   Visualizador de imagens para X para quase todos os formatos de imagens
-Summary(ru.UTF-8):   Программа для просмотра и преобразования файлов изображений для X
-Summary(tr.UTF-8):   X tabanlı resim görüntüleyici
-Summary(uk.UTF-8):   Програма для перегляду та перетворення файлів зображень для X
+Summary(de.UTF-8):	X-basierender Bild-Viewer für praktische sämtliche Grafiken
+Summary(es.UTF-8):	Visualizador de imágenes para X para cuasi todos los formatos de imágenes
+Summary(fr.UTF-8):	Visualisateur sous X pour quasiment tous les types d'images
+Summary(pl.UTF-8):	Przeglądarka różnego rodzaju plików graficznych pracująca w X Window
+Summary(pt_BR.UTF-8):	Visualizador de imagens para X para quase todos os formatos de imagens
+Summary(ru.UTF-8):	Программа для просмотра и преобразования файлов изображений для X
+Summary(tr.UTF-8):	X tabanlı resim görüntüleyici
+Summary(uk.UTF-8):	Програма для перегляду та перетворення файлів зображень для X
 Name:		xv
 Version:	3.10a
 Release:	28
