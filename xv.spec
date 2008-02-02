@@ -43,6 +43,7 @@ BuildRequires:	libtiff-devel
 BuildRequires:	libpng-devel
 BuildRequires:	sed
 BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-lib-libXt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
