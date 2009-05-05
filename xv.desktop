@@ -51,6 +51,6 @@ Icon=xv
 Exec=xv
 Terminal=false
 Type=Application
-MimeType=application/pdf;application/postscript;image/gif;image/jpeg;image/tiff;image/x-xbm;image/x-xpm;
+MimeType=image/gif;image/jpeg;image/png;image/tiff;image/x-xbm;image/x-xpm;
 Categories=Graphics;Viewer;
 # vi: encoding=utf-8
