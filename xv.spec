@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	X tabanlı resim görüntüleyici
 Summary(uk.UTF-8):	Програма для перегляду та перетворення файлів зображень для X
 Name:		xv
 Version:	3.10a
-Release:	30
+Release:	31
 License:	Shareware
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.cis.upenn.edu/pub/xv/%{name}-%{version}.tar.gz
