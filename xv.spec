@@ -98,18 +98,16 @@ RGB, XPM, Targa, XWD, PostScript(TM) та PM. Xv також вміє робит�
 просту обробку зображень - cropping, expanding, знімки экрану і т.і.
 
 %prep
-%setup -q
-tar xvfz %{SOURCE1}
-tar xvfz %{SOURCE6} -C ../
-patch -p1 < ../xv-3.10a-jumbo-fix-enh-patch-20070520.txt
+%setup -q -a1 -a6 -a2
+cp -a xv-%{version}/* .
+patch -p1 < ./xv-3.10a-jumbo-fix-enh-patch-20070520.txt || exit 1
 %patch0 -p1
 %patch1 -p1
-tar zxf %{SOURCE2}
 
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CCOPTS="%{rpmcflags} `pkg-config --cflags libpng12 2>/dev/null`" \
+	CCOPTS="%{rpmcppflags} %{rpmcflags} `pkg-config --cflags libpng12 2>/dev/null`" \
 	LDFLAGS="%{rpmldflags}"
 
 %install
@@ -130,7 +128,6 @@ bzip2 -dc %{SOURCE5} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-rm -rf $RPM_BUILD_ROOT/../xv-3.10a-jumbo-fix-enh-patch-20070520.txt
 
 %files
 %defattr(644,root,root,755)
