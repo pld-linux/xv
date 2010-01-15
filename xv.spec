@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	X tabanlı resim görüntüleyici
 Summary(uk.UTF-8):	Програма для перегляду та перетворення файлів зображень для X
 Name:		xv
 Version:	3.10a
-Release:	31
+Release:	32
 License:	Shareware
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.cis.upenn.edu/pub/xv/%{name}-%{version}.tar.gz
@@ -22,26 +22,14 @@ Source3:	%{name}.desktop
 Source4:	%{name}.png
 Source5:	%{name}-non-english-Xman-pages.tar.bz2
 # Source5-md5:	4e5a6582ad76974309ca8bf8fb56b671
+Source6:	http://dl.sourceforge.net/project/png-mng/XV%20jumbo%20patches/20070520/%{name}-%{version}-jumbo-patches-20070520.tar.gz
 Patch0:		%{name}-PLD.patch
-Patch1:		%{name}-FLmask.v2.1.patch
-Patch2:		%{name}-JPEG.patch
-Patch3:		%{name}-TIFF.patch
-Patch4:		%{name}-croppad.patch
-Patch5:		%{name}-deepcolor.patch
-Patch6:		%{name}-exceed_grab_patch.txt
-Patch7:		%{name}-gifpatch
-Patch8:		%{name}-grabpatch
-Patch9:		%{name}-longname.patch
-Patch10:	%{name}-mp-tiff-patch
-Patch11:	%{name}-pdf.patch
-Patch12:	%{name}-png-fix2.patch
-Patch13:	%{name}-vispatch
-Patch14:	%{name}-c.patch
+Patch1:		http://www.gregroelofs.com/code/%{name}-3.10a-enhancements.20070520-20081216.diff
 URL:		http://www.trilon.com/xv/xv.html
+BuildRequires:	jasper-devel
 BuildRequires:	libjpeg-devel
-BuildRequires:	libtiff-devel
 BuildRequires:	libpng-devel
-BuildRequires:	sed
+BuildRequires:	libtiff-devel
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -112,22 +100,10 @@ RGB, XPM, Targa, XWD, PostScript(TM) та PM. Xv також вміє робит�
 %prep
 %setup -q
 tar xvfz %{SOURCE1}
-patch -p1 --quiet < xvpng.diff
+tar xvfz %{SOURCE6} -C ../
+patch -p1 < ../xv-3.10a-jumbo-fix-enh-patch-20070520.txt
 %patch0 -p1
 %patch1 -p1
-%patch2 -p0
-%patch3 -p0
-%patch4 -p0
-%patch5 -p0
-%patch6 -p0
-%patch7 -p0
-%patch8 -p0
-%patch9 -p1
-%patch10 -p0
-%patch11 -p0
-%patch12 -p0
-%patch13 -p0
-%patch14 -p1
 tar zxf %{SOURCE2}
 
 %build
@@ -143,24 +119,28 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}} \
 
 %{__make} install \
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
+	DOCDIR=$RPM_BUILD_ROOT%{_docdir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
 	LIBDIR=$RPM_BUILD_ROOT%{_libdir}
 
 install %{SOURCE3} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE4} $RPM_BUILD_ROOT%{_pixmapsdir}
-mv -f xvman310a manual
 
 bzip2 -dc %{SOURCE5} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT/../xv-3.10a-jumbo-fix-enh-patch-20070520.txt
 
 %files
 %defattr(644,root,root,755)
-%doc README docs/xvdocs.ps BUGS CHANGELOG IDEAS CPMASK 00_README manual
+%doc README BUGS CHANGELOG IDEAS
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/xv.desktop
 %{_pixmapsdir}/*
+%doc %{_docdir}/README.jumbo
+%doc %{_docdir}/xvdocs.pdf
+%doc %{_docdir}/xvdocs.ps
 %{_mandir}/man1/*
 %lang(fi) %{_mandir}/fi/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
