@@ -23,8 +23,10 @@ Source4:	%{name}.png
 Source5:	%{name}-non-english-Xman-pages.tar.bz2
 # Source5-md5:	4e5a6582ad76974309ca8bf8fb56b671
 Source6:	http://dl.sourceforge.net/project/png-mng/XV%20jumbo%20patches/20070520/%{name}-%{version}-jumbo-patches-20070520.tar.gz
+# Source6-md5:	9fb2d0ec320498105cafeba38a588472
 Patch0:		%{name}-PLD.patch
-Patch1:		http://www.gregroelofs.com/code/%{name}-3.10a-enhancements.20070520-20081216.diff
+#from http://www.gregroelofs.com/code/%{name}-3.10a-enhancements.20070520-20081216.diff
+Patch1:		%{name}-3.10a-enhancements.20070520-20081216.diff
 URL:		http://www.trilon.com/xv/xv.html
 BuildRequires:	jasper-devel
 BuildRequires:	libjpeg-devel
