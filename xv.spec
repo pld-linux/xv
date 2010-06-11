@@ -137,9 +137,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/xv.desktop
 %{_pixmapsdir}/*
-%doc %{_docdir}/README.jumbo
-%doc %{_docdir}/xvdocs.pdf
-%doc %{_docdir}/xvdocs.ps
+%doc README.jumbo
+%doc docs/xvdocs.pdf
+%doc docs/xvdocs.ps
 %{_mandir}/man1/*
 %lang(fi) %{_mandir}/fi/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
