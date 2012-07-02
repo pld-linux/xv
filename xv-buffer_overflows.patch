@@ -1,0 +1,39 @@
+diff -ruNp xv-3.10a.orig/xvtext.c xv-3.10a/xvtext.c
+--- xv-3.10a.orig/xvtext.c	2012-07-02 14:12:18.729232321 +0200
++++ xv-3.10a/xvtext.c	2012-07-02 14:14:09.245684311 +0200
+@@ -53,7 +53,7 @@
+ #  define TV_J_NBUTTS 8
+ #endif
+ 
+-#define TITLELEN 128
++#define TITLELEN 270
+ 
+ #ifdef TV_MULTILINGUAL
+ struct coding_spec {
+@@ -385,7 +385,7 @@ int TextView(fname)
+ 
+   int   filetype;
+   long  textlen;
+-  char *text, buf[512], title[128], rfname[MAXPATHLEN+1];
++  char *text, buf[512], title[TITLELEN], rfname[MAXPATHLEN+1];
+   char *basefname[128];  /* just current fname, no path */
+   FILE *fp;
+   char filename[MAXPATHLEN+1];
+@@ -453,7 +453,7 @@ int TextView(fname)
+ 
+   fclose(fp);
+ 
+-  sprintf(title, "File: '%s'", BaseName(fname));
++  snprintf(title, TITLELEN, "File: '%s'", BaseName(fname));
+   OpenTextView(text, (int) textlen, title, 1);
+ 
+   /* note:  text gets freed when window gets closed */
+@@ -545,7 +545,7 @@ void ChangeCommentText()
+   tv->freeonclose = 0;
+ 
+   if (strlen(fullfname))
+-    sprintf(tv->title, "File: '%s'", BaseName(fullfname));
++    snprintf(tv->title, TITLELEN, "File: '%s'", BaseName(fullfname));
+   else
+     sprintf(tv->title, "<no file loaded>");
+ 
