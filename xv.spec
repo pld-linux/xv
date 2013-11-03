@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	X tabanlı resim görüntüleyici
 Summary(uk.UTF-8):	Програма для перегляду та перетворення файлів зображень для X
 Name:		xv
 Version:	3.10a
-Release:	40
+Release:	41
 License:	Shareware
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.cis.upenn.edu/pub/xv/%{name}-%{version}.tar.gz
@@ -29,6 +29,7 @@ Patch0:		%{name}-PLD.patch
 Patch1:		%{name}-3.10a-enhancements.20070520-20081216.diff
 Patch2:		%{name}-libpng-1.5.patch
 Patch3:		%{name}-buffer_overflows.patch
+Patch4:		%{name}-format.patch
 URL:		http://www.trilon.com/xv/xv.html
 BuildRequires:	jasper-devel
 BuildRequires:	libjpeg-devel
@@ -109,6 +110,7 @@ patch -p1 < ./xv-3.10a-jumbo-fix-enh-patch-20070520.txt || exit 1
 %patch1 -p1
 %patch2 -p0
 %patch3 -p1
+%patch4 -p1
 
 %build
 %{__make} \

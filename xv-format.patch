@@ -1,0 +1,13 @@
+--- xv-3.10a/xvpbm.c~	2013-11-03 09:33:10.000000000 +0100
++++ xv-3.10a/xvpbm.c	2013-11-03 09:33:59.806789183 +0100
+@@ -885,8 +885,8 @@
+ 	  }
+ 	}
+ 	else {
+-	  if (*pix) fprintf(fp,str1);
+-	       else fprintf(fp,str0);
++	  if (*pix) fprintf(fp,"%s", str1);
++	       else fprintf(fp,"%s", str0);
+ 	  len+=2;
+ 	  if (len>68) { fprintf(fp,"\n"); len=0; }
+ 	}
