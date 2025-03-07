@@ -8,36 +8,26 @@ Summary(ru.UTF-8):	Программа для просмотра и преобр�
 Summary(tr.UTF-8):	X tabanlı resim görüntüleyici
 Summary(uk.UTF-8):	Програма для перегляду та перетворення файлів зображень для X
 Name:		xv
-Version:	3.10a
-Release:	43
+Version:	6.0.3
+Release:	0.2
 License:	Shareware
 Group:		X11/Applications/Graphics
-Source0:	ftp://ftp.cis.upenn.edu/pub/xv/%{name}-%{version}.tar.gz
-# Source0-md5:	2d4fbeec1561304362781cc8e2f7f72d
-Source1:	ftp://swrinde.nde.swri.edu/pub/png/applications/%{name}-%{version}-png-1.2d.tar.gz
-# Source1-md5:	c8cbe14db6e2104ed4eb5330cdaba420
-Source2:	%{name}man310a-html.tar.gz
-# Source2-md5:	78dce344e3e85faf01e1f13014aa659b
-Source3:	%{name}.desktop
-Source4:	%{name}.png
-Source5:	%{name}-non-english-Xman-pages.tar.bz2
-# Source5-md5:	4e5a6582ad76974309ca8bf8fb56b671
-Source6:	http://dl.sourceforge.net/project/png-mng/XV%20jumbo%20patches/20070520/%{name}-%{version}-jumbo-patches-20070520.tar.gz
-# Source6-md5:	9fb2d0ec320498105cafeba38a588472
-Patch0:		%{name}-PLD.patch
-#from http://www.gregroelofs.com/code/%{name}-3.10a-enhancements.20070520-20081216.diff
-Patch1:		%{name}-3.10a-enhancements.20070520-20081216.diff
-Patch2:		%{name}-libpng-1.5.patch
-Patch3:		%{name}-buffer_overflows.patch
-Patch4:		%{name}-format.patch
-Patch5:		%{name}-jasper.patch
+Source0:	https://github.com/jasper-software/xv/archive/refs/tags/v%{version}.tar.gz
+# Source0-md5:	8c5dea54cada4833dbe4a47d99d07e3f
 URL:		http://www.trilon.com/xv/xv.html
+BuildRequires:	cmake
 BuildRequires:	jasper-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel >= 2:1.2
 BuildRequires:	libtiff-devel
+BuildRequires:	libwebp-devel
 BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xorg-lib-libXrandr-devel
 BuildRequires:	xorg-lib-libXt-devel
+BuildRequires:	zlib-devel
+Requires(post,postun):	desktop-file-utils
+Requires(post,postun):	gtk-update-icon-cache
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -103,51 +93,42 @@ Utah Raster Toolkit RLE, PDS/VICAR, Sun Rasterfile, BMP, PCX, IRIS
 RGB, XPM, Targa, XWD, PostScript(TM) та PM. Xv також вміє робити
 просту обробку зображень - cropping, expanding, знімки экрану і т.і.
 
+%post
+%update_icon_cache hicolor
+%update_desktop_database
+
+%postun
+%update_icon_cache hicolor
+%update_desktop_database
+
 %prep
-%setup -q -a1 -a6 -a2
-cp -a xv-%{version}/* .
-patch -p1 < ./xv-3.10a-jumbo-fix-enh-patch-20070520.txt || exit 1
-%patch0 -p1
-%patch1 -p1
-%patch2 -p0
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
+%setup -q
 
 %build
-%{__make} \
-	CC="%{__cc}" \
-	CCOPTS="%{rpmcppflags} %{rpmcflags} `pkg-config --cflags libpng 2>/dev/null`" \
-	LDFLAGS="%{rpmldflags}"
+mkdir build_dir
+cd build_dir
+%cmake ..
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}} \
-	$RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/man1}
 
+cd build_dir
 %{__make} install \
-	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
-	DOCDIR=$RPM_BUILD_ROOT%{_docdir} \
-	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
-	LIBDIR=$RPM_BUILD_ROOT%{_libdir}
+	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE3} $RPM_BUILD_ROOT%{_desktopdir}
-install %{SOURCE4} $RPM_BUILD_ROOT%{_pixmapsdir}
-
-bzip2 -dc %{SOURCE5} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README BUGS CHANGELOG IDEAS
+%doc LICENSE.txt NEWS.txt README.md src/{README,README.FLmask,README.debian,README.jumbo,README.pcd,README.xv-non-english-Xman-pages,docs}
 %attr(755,root,root) %{_bindir}/*
+%{_sysconfdir}/xv_mgcsfx
 %{_desktopdir}/xv.desktop
 %{_pixmapsdir}/*
-%doc README.jumbo
-%doc docs/xvdocs.pdf
-%doc docs/xvdocs.ps
 %{_mandir}/man1/*
 %lang(fi) %{_mandir}/fi/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
