@@ -8,12 +8,12 @@ Summary(ru.UTF-8):	Программа для просмотра и преобр�
 Summary(tr.UTF-8):	X tabanlı resim görüntüleyici
 Summary(uk.UTF-8):	Програма для перегляду та перетворення файлів зображень для X
 Name:		xv
-Version:	6.0.3
+Version:	6.0.4
 Release:	1
 License:	Shareware
 Group:		X11/Applications/Graphics
 Source0:	https://github.com/jasper-software/xv/archive/refs/tags/v%{version}.tar.gz
-# Source0-md5:	8c5dea54cada4833dbe4a47d99d07e3f
+# Source0-md5:	cda579e0073aea61de4f6b7643bbe4d6
 URL:		http://www.trilon.com/xv/xv.html
 BuildRequires:	cmake
 BuildRequires:	jasper-devel
